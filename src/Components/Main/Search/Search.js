@@ -1,5 +1,5 @@
 import React from "react";
-// import { StatusBar } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import {
   Button,
   Text,
@@ -14,27 +14,35 @@ import {
   Icon,
   Right
 } from "native-base";
+
+import HeaderComponent from '../Home/Header';
+
 export default class Search extends React.Component {
+  constructor(props)
+  {
+    super(props);
+  }
   render() {
+    //Style
+    const { wrapper, content } = styles;
     return (
       <Container>
-        <Header>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Search Product</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content padder>
-          
+        <HeaderComponent navigation = {this.props.navigation}/>
+        <Content padder style = { StyleSheet.flatten(wrapper) }>
+          <View style = { content }>
+            
+          </View>
         </Content>
       </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: '#f4f1e6'
+  },
+  content : {
+    backgroundColor : 'orange'
+  }
+})

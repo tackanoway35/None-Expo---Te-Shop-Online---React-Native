@@ -183,7 +183,7 @@ class Cart extends React.Component {
                 <Button
                   block
                   success
-                  onPress={() => this.props.navigation.navigate("Payment", { totalPrice: totalCartPrice })}
+                  onPress={() => this.props.navigation.navigate("Payment", { total_amount: totalCartPrice, order_id : order.orders[0].id })}
                 >
                   <Text>
                     Total :&nbsp;

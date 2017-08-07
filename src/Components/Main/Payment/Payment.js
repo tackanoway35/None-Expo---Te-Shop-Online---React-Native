@@ -46,7 +46,7 @@ class Payment extends Component {
 
     componentDidMount() {
         //Get information
-        const { totalPrice } = this.props.navigation.state.params;
+        const { total_amount, order_id } = this.props.navigation.state.params;
         const { name, admin_id, address, email } = this.props.profile;
         const { webviewbridge } = this.refs;
         //Send data to Web View Server
@@ -56,8 +56,9 @@ class Payment extends Component {
                     fullName: name,
                     email: email,
                     address: address,
-                    total_amount: totalPrice,
-                    tel: '01652880097'
+                    total_amount: total_amount,
+                    tel: '01652880097',
+                    order_id : order_id
                 }
 
                 webviewbridge.sendToBridge(JSON.stringify(data));

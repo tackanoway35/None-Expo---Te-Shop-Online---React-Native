@@ -9,7 +9,12 @@ import LocalCard from '../ModePayment/LocalCard';
 import CreditCard from '../ModePayment/CreditCard';
 
 export default (HomeNav = StackNavigator({
-    HomeView : { screen : Home },
+    HomeView : { 
+        screen : Home,
+        navigationOptions: { 
+            header: null 
+        }
+    },
     ProductDetail : { screen : ProductDetail },
     ListProduct : { screen : ListProduct },
     ScratchCard : { screen : ScratchCard },

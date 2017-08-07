@@ -484,8 +484,6 @@ export function thunkConfirmOrder(url, data)
             }
         })
         .catch(e => {
-            console.log("Error");
-            console.log(e);
             dispatch(acConfirmOrderError());
             alert("Confirm order error. Please try again later")
         })

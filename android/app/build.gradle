@@ -133,6 +133,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-maps')
     compile project(':react-native-webview-bridge')
     compile project(':react-native-image-picker')
     compile fileTree(dir: "libs", include: ["*.jar"])
